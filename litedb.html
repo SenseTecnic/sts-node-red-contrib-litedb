@@ -1,0 +1,50 @@
+<!--
+  Copyright 2014 IBM Corp.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="litedb">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="litedb">
+    <p>Allows basic access to a single Sqlite database.</p>
+    <p>This node uses the <b>db.all</b> operation against the database. This does allow INSERTS, UPDATES and DELETES, but no PRAGMAS to change SQLite configuration settings.
+    By its very nature it is SQL injection... so <i>be careful out there...</i></p>
+    <p><code>msg.topic</code> must hold the <i>query</i> for the database, and the result is returned in <code>msg.payload</code>.</p>
+    <p><code>msg.payload</code> can contain an array of values to bind to the topic.</p>
+    <p>Typically the returned payload will be an array of the result rows, (or an error).</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('litedb',{
+        category: 'storage-input',
+        color:"#e97b00",
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "sqlite.png",
+        label: function() {
+            return this.name||"litedb";
+        },
+            labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

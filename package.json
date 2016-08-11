@@ -1,0 +1,27 @@
+{
+  "name": "sts-node-red-contrib-litedb",
+  "version": "0.0.1",
+  "description": "SQLite node with fixed file name and limited file size",
+  "dependencies": {
+    "sqlite3": "file:/Users/mike/git/node-sqlite3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "node-red",
+    "litedb"
+  ],
+  "node-red": {
+    "nodes": {
+      "litedb": "litedb.js"
+    }
+  },
+  "author": {
+    "name": "Mike Blackstock",
+    "email": "mblackstock@sensetecnic.com",
+    "url": "http://www.sensetecnic.com"
+  }
+}
