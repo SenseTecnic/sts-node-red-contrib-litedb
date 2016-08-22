@@ -10,7 +10,7 @@ Install
 
 Run the following command in the root directory of your Node-RED install
 
-    npm install sts-node-red-node-litedb --build-from-source
+    npm install SenseTecnic/sts-node-red-contrib-litedb --build-from-source
 
 The `--build-from-source' option will ensure the SQLite file size is limited and PRAGMA sql statements
 are disabled in SQLite.
