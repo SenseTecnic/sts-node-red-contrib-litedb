@@ -1,6 +1,6 @@
 {
   "name": "sts-node-red-contrib-litedb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SQLite node with fixed file name and limited file size",
   "dependencies": {
     "sqlite3": "SenseTecnic/node-sqlite3"

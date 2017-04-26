@@ -21,7 +21,6 @@ module.exports = function(RED) {
     var sqliteReconnectTime = RED.settings.litedbReconnectTime || 20000;
     var liteDbFileName = RED.settings.litedbFileName || "litedb";
     var sqlite3 = require('sqlite3');
-    console.log("loading litedb!");
 
     var sqlitedb = null;
     var connections = 0;
@@ -64,7 +63,6 @@ module.exports = function(RED) {
 
         node.on("input", function(msg) {
             if (typeof msg.topic === 'string') {
-                //console.log("query:",msg.topic);
                 var bind = Array.isArray(msg.payload) ? msg.payload : [];
                 sqlitedb.all(msg.topic, bind, function(err, row) {
                     if (err) { node.error(err,msg); }
@@ -81,7 +79,6 @@ module.exports = function(RED) {
             }
         });
         node.on("close", function() {
-            console.log("close called");
             dbClose(node);
         })
     }
