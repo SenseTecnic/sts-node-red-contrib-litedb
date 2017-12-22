@@ -36,5 +36,5 @@ The reconnect timeout in milliseconds can be changed by adding a line to **setti
 
 The file to use for the single database (relative to the user directory) can be set by adding the following line to **settings.js**
 
-    litedbFileName: litedb
+    litedbFileName: "litedb"
 
